@@ -77,30 +77,7 @@ for (yPixel in 0...24) {
 
 ### Installation
 
-#### Install with `c3l`
-
-Use [c3l](https://github.com/konimarti/c3l) to fetch and wire the dependency
-automatically.
-
-From your project root (where `project.json` lives):
-
-```bash
-# Fetch a specific version tag (recommended)
-c3l fetch https://github.com/konimarti/wren.c3l v0.1.0
-
-# Or fetch the default branch
-c3l fetch https://github.com/konimarti/wren.c3l
-```
-
-This updates `project.json` and stores the compressed library under your
-dependency search path.
-
-> **Tip:** To update later, run `c3l update wren`. To remove, `c3l remove wren`.
-
-#### Install library manually
-
-If you prefer not to use `c3l`, update your `project.json`:
-1. Add the library path to your project → `dependency-search-paths`.
+1. Add the library path to your project with `dependency-search-paths`.
 2. Add the dependency name to `dependencies`.
 
 Example `project.json` snippet:
