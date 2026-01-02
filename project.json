@@ -18,6 +18,10 @@
 		"skynet": {
 			"type": "executable",
 			"sources": [ "wren.c3i", "example/skynet.c3" ]
+		},
+		"lovecraft": {
+			"type": "executable",
+			"sources": [ "wren.c3i", "example/lovecraft.c3" ]
 		}
 	}
 }

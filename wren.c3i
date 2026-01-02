@@ -56,9 +56,6 @@ alias WrenFinalizerFn = fn void (void* data);
 //     const char* importer, const char* name);
 alias WrenResolveModuleFn = fn ZString (WrenVM* vm, ZString importer, ZString name);
 
-// Forward declare
-// alias WrenLoadModuleResult = void*;
-
 // Called after loadModuleFn is called for module [name]. The original returned result
 // is handed back to you in this callback, so that you can free memory if appropriate.
 // typedef void (*WrenLoadModuleCompleteFn)(WrenVM* vm, const char* name, struct WrenLoadModuleResult result);
@@ -75,7 +72,6 @@ struct WrenLoadModuleResult
 }
 
 // Loads and returns the source code for the module [name].
-// typedef WrenLoadModuleResult (*WrenLoadModuleFn)(WrenVM* vm, const char* name);
 alias WrenLoadModuleFn = fn WrenLoadModuleResult(WrenVM* vm, ZString name);
 
 // Returns a pointer to a foreign method on [className] in [module] with
