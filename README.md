@@ -16,7 +16,7 @@ run Wren from C3.
 
 ## Example
 
-[Mandelbrot]()
+[Mandelbrot](examples/mandelbrot.c3)
 
 ```c3
 module mandelbrot;
