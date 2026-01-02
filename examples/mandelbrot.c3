@@ -5,9 +5,7 @@ fn void write_fn(WrenVM* vm, ZString text) => io::print(text);
 fn void error_fn(WrenVM* vm, WrenErrorType type, ZString module_name, CInt line, ZString msg)
 	=> io::eprintfn("Error (%s, line %d): %s", module_name, line, msg);
 
-fn void main() => run_wren();
-
-fn void run_wren()
+fn void main()
 {
 	WrenConfiguration config = { .writeFn = &write_fn, .errorFn = &error_fn };
 

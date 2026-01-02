@@ -15,16 +15,19 @@ run Wren from C3.
 
 ### Example
 
+[Mandelbrot](examples/mandelbrot.c3)
+
 ```c3
 module mandelbrot;
-
 import std::io, wren;
 
 fn void write_fn(WrenVM* vm, ZString text) => io::print(text);
+fn void error_fn(WrenVM* vm, WrenErrorType type, ZString module_name, CInt line, ZString msg)
+	=> io::eprintfn("Error (%s, line %d): %s", module_name, line, msg);
 
 fn void main()
 {
-	WrenConfiguration config = { .writeFn = &write_fn };
+	WrenConfiguration config = { .writeFn = &write_fn, .errorFn = &error_fn };
 
 	WrenVM* vm = wren::create_vm(&config);
 	defer wren::destroy_vm(vm);
