@@ -1,0 +1,17 @@
+{
+  "provides": "wren",
+  "c-sources": [
+  	"csource/src/**"
+  ],
+  "c-include-dirs": [
+	  "csource/src/include",
+	  "csource/src/vm",
+	  "csource/src/optional"
+  ],
+  "targets": {
+    "macos-x64": {},
+    "macos-aarch64": {},
+    "linux-x64": {},
+    "windows-x64": {}
+  }
+}

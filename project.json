@@ -1,0 +1,19 @@
+{
+	"authors": [ "Koni Marti <koni.marti@gmail.com>" ],
+	"version": "0.1.0",
+	"output": "build",
+	"c-sources": [
+		"csource/src/**"
+	],
+	"c-include-dirs": [
+		"csource/src/include",
+		"csource/src/vm",
+		"csource/src/optional"
+	],
+	"targets": {
+		"mandelbrot": {
+			"type": "executable",
+			"sources": [ "wren.c3i", "examples/mandelbrot.c3" ]
+		}
+	}
+}
