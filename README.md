@@ -22,8 +22,8 @@ module mandelbrot;
 import std::io, wren;
 
 fn void write_fn(WrenVM* vm, ZString text) => io::print(text);
-fn void error_fn(WrenVM* vm, WrenErrorType type, ZString module_name, CInt line, ZString msg)
-	=> io::eprintfn("Error (%s, line %d): %s", module_name, line, msg);
+fn void error_fn(WrenVM* vm, WrenErrorType type, ZString name, CInt line, ZString msg)
+	=> io::eprintfn("Error (%s, line %d): %s", name, line, msg);
 
 fn void main()
 {
