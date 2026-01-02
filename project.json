@@ -13,7 +13,11 @@
 	"targets": {
 		"mandelbrot": {
 			"type": "executable",
-			"sources": [ "wren.c3i", "examples/mandelbrot.c3" ]
+			"sources": [ "wren.c3i", "example/mandelbrot.c3" ]
+		},
+		"skynet": {
+			"type": "executable",
+			"sources": [ "wren.c3i", "example/skynet.c3" ]
 		}
 	}
 }
