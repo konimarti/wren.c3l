@@ -1,4 +1,4 @@
-# Wren C3 Bindings
+## Wren C3 Bindings
 
 This project provides C3 bindings for the [Wren](https://wren.io) scripting language.
 
@@ -6,14 +6,14 @@ The bindings are fully standalone: the Wren source code is integrated directly
 into the library, so there are no external dependencies required to embed and
 run Wren from C3.
 
-## Features
+### Features
 
 * Fully self-contained (Wren source included)
 * No external libraries
 * Suitable for embedding scripting into C3 applications
 * Minimal and lightweight integration
 
-## Example
+### Example
 
 ```c3
 module mandelbrot;
@@ -72,9 +72,9 @@ for (yPixel in 0...24) {
 `;
 ```
 
-## Installation
+### Installation
 
-### Install with `c3l`
+#### Install with `c3l`
 
 Use [c3l](https://github.com/konimarti/c3l) to fetch and wire the dependency
 automatically.
@@ -94,7 +94,7 @@ dependency search path.
 
 > **Tip:** To update later, run `c3l update wren`. To remove, `c3l remove wren`.
 
-### Install library manually
+#### Install library manually
 
 If you prefer not to use `c3l`, update your `project.json`:
 1. Add the library path to your project → `dependency-search-paths`.
@@ -116,6 +116,6 @@ Example `project.json` snippet:
 
 PRs are welcome.
 
-## License
+### License
 
 MIT License.
