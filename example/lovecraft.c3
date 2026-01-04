@@ -1,24 +1,29 @@
 module lovecraft;
-import std::io, wren;
+import wren, std::io;
 
-fn void write_fn(WrenVM vm, ZString text) => io::print(text);
-fn void error_fn(WrenVM vm, WrenErrorType type, ZString name, CInt line, ZString msg)
-	=> io::eprintfn("Error (%s, line %d): %s", name, line, msg);
+fn void on_complete_fn(WrenVM vm, ZString name, WrenLoadModuleResult result)
+{
+	io::printfn("On complete callback: %s", name);
+}
 
 fn WrenLoadModuleResult load_fn(WrenVM vm, ZString name)
 {
+	io::printfn("Loading module: %s", name);
+
 	WrenLoadModuleResult result;
-	if (name == "cthulu") result.source = cthulu;
+	if (name == "cthulu")
+	{
+		result.source = cthulu;
+		result.onComplete = (void*)&on_complete_fn;
+	}
 	return result;
 }
 
 fn void main()
 {
-	WrenConfiguration config = {
-		.writeFn = &write_fn,
-		.errorFn = &error_fn,
-		.loadModuleFn = &load_fn,
-	};
+	WrenConfiguration config;
+	config.init_with_stdio();
+	config.loadModuleFn = &load_fn;
 
 	WrenVM vm = wren::create_vm(&config);
 	defer wren::destroy_vm(vm);

@@ -2,6 +2,7 @@
 	"authors": [ "Koni Marti <koni.marti@gmail.com>" ],
 	"version": "0.1.0",
 	"output": "build",
+	"sources": [ "*" ],
 	"c-sources": [
 		"csource/src/**"
 	],
@@ -13,7 +14,7 @@
 	"targets": {
 		"mandelbrot": {
 			"type": "executable",
-			"sources": [ "wren.c3i", "example/mandelbrot.c3" ]
+			"sources": [ "example/mandelbrot.c3" ]
 		},
 		"skynet": {
 			"type": "executable",

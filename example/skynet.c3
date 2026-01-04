@@ -1,13 +1,10 @@
 module skynet;
-import std::io, wren;
-
-fn void write_fn(WrenVM vm, ZString text) => io::print(text);
-fn void error_fn(WrenVM vm, WrenErrorType type, ZString name, CInt line, ZString msg)
-	=> io::eprintfn("Error (%s, line %d): %s", name, line, msg);
+import wren;
 
 fn void main()
 {
-	WrenConfiguration config = { .writeFn = &write_fn, .errorFn = &error_fn };
+	WrenConfiguration config;
+	config.init_with_stdio();
 
 	WrenVM vm = wren::create_vm(&config);
 	defer wren::destroy_vm(vm);
