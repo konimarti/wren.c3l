@@ -1,5 +1,6 @@
 {
   "provides": "wren",
+  "sources": [ "*" ],
   "c-sources": [
   	"csource/src/**"
   ],
