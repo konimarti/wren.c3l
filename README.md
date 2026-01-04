@@ -29,7 +29,7 @@ fn void main()
 }
 ```
 
-See more [examples](examples/)
+See more [examples](example/).
 
 ### Installation
 
