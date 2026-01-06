@@ -16,6 +16,10 @@
 			"type": "executable",
 			"sources": [ "example/mandelbrot.c3" ]
 		},
+		"montecarlo": {
+			"type": "executable",
+			"sources": [ "example/montecarlo.c3" ]
+		},
 		"skynet": {
 			"type": "executable",
 			"sources": [ "wren.c3i", "example/skynet.c3" ]
